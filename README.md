@@ -1,5 +1,5 @@
 # Bookpage
- A simple extension that stores and loads bookmarks.
+ A simple extension that stores and loads bookmarks, and overwrites your new tab with the page.
 
 Import into edge by going to Extensions -> Enable Developer Mode -> Load Unpacked -> Select the folder containing the files.
 
