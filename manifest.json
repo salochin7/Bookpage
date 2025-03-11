@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Custom New Tab",
+    "version": "1.0",
+    "description": "A custom new tab page for Edge.",
+    "permissions": [
+      "tabs",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "chrome_url_overrides": {
+      "newtab": "newtab.html"
+    },
+    "content_security_policy": {
+      "script-src": "'self';",
+      "style-src": "'self' 'unsafe-inline';"
+    }
+  }
+  
