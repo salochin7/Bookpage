@@ -6,94 +6,164 @@
     <title>Custom New Tab</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+a {
+    text-decoration: none !important;
+    color:white;
+    font-size: 25px;
+}
+h1 {
+    color: #333;
+}
+#addCategoryButton, #fileButton {
+    height:50px;
+    width:150px;
+    border-radius:5px;
+    background-color:gray;
+    color:white;
+}
+h2 {
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    width:100%;
+    align-content: center;
+}
 
-        h1 {
-            color: #333;
-        }
+/* Bookmark grid layout */
+#bookmarkGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+}
+.add-btn {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background 0.3s;
+}
 
-        h2 { 
-            background-color:#005A9E;
-            color:white;
-            border-radius:5px;
-            height:30px;
-            align-content: center;
-        }
+.add-btn:hover {
+    background-color: #3e8e41;
+}
 
-        /* Center the button and input container */
-        .controls {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+/* Make category header layout inline */
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
 
-        /* Style the import button */
-        #fileButton, #addCategoryButton {
-            background: #0078D7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+/* Category container */
+.category-container {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#uploadBackgroundBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 9999;
+}
 
-        #fileButton:hover {
-            background: #005A9E;
-        }
+#uploadBackgroundBtn:hover {
+    background-color: #45a049;
+}
+/* Bookmark items */
+.bookmark-item {
+    background: #000000;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
 
-        /* Flex layout for bookmark grid */
-        #bookmarkGrid {
-            display: flex;
-            flex-wrap: wrap; /* Allows the grid to wrap categories */
-            justify-content: center; /* Centers the grid items */
-            gap: 15px; /* Adds space between categories */
-            padding: 20px;
-            width: 100%;
-        }
+/* Ensure the delete button is separate and clickable */
+.bookmark-item .delete-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
-        /* Category container */
-        .category-container {
-            width: 300px; /* Fixed width for each category */
-            margin: 10px;
-            padding: 10px;
-            background-color: #e1e1e1;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.bookmark-text {
+    flex-grow: 1;
+    text-align: center;
+}
 
-        /* Bookmark buttons */
-        .bookmark-item {
-            background: #00b3fa;
-            padding: 15px;
-            font-size: 18px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50px;
-            margin-top:15px;
-        }
 
-        .bookmark-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+.delete-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+/* Style for the background color picker button */
+#pickBackgroundColorBtn {
+    position: fixed;
+    top: 80px; /* Adjust as needed */
+    right: 20px;
+    background-color: #2196F3; /* Blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+#pickBackgroundColorBtn:hover {
+    background-color: #1976D2;
+}
+
     </style>
 </head>
 <body>
     <h1 id="pageTitle" contenteditable="true">CUSTOM PAGE</h1>
 
-    
+    <input type="file" id="uploadBackgroundBtn" accept="image/*" />
+    <button id="pickBackgroundColorBtn">Pick Background Color</button>
     <div class="controls">
         <input type="file" id="fileInput" accept=".html" style="display: none;">
         <button id="fileButton">Import Bookmarks</button>
